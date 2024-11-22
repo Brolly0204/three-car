@@ -92,8 +92,10 @@ dracerLoader.setDecoderPath('/decoder/')
 
 const wheels = []
 const loader = new GLTFLoader()
-const shadowPng = await import('./assets/ferrari_ao.png?url')
-const shadow = new THREE.TextureLoader().load(shadowPng.default)
+// const shadowPng = await import('./assets/ferrari_ao.png?url')
+// console.log(1, shadowPng.default)
+// const shadow = new THREE.TextureLoader().load(shadowPng.default)
+const shadow = new THREE.TextureLoader().load(new URL('./assets/ferrari_ao.png', import.meta.url).href)
 loader.setDRACOLoader(dracerLoader)
 loader.load(
   gdl,
